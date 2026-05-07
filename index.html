@@ -6,13 +6,11 @@
   <meta name="description" content="Full-Stack Developer portfolio — building fast, scalable web applications from database to deployment." />
   <title>Reignheart Kim Gaan — Full-Stack Developer</title>
 
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
 
   <style>
-    
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -21,8 +19,6 @@
       --ink-3:      #999993;
       --surface:    #fafaf8;
       --border:     #e5e5e0;
-      --accent:     #111110;
-      --accent-bg:  #111110;
       --white:      #ffffff;
       --sans:       'DM Sans', system-ui, sans-serif;
       --serif:      'DM Serif Display', Georgia, serif;
@@ -40,7 +36,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-  
     h1, h2, h3 { font-family: var(--serif); line-height: 1.15; font-weight: 400; }
     h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
     h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
@@ -48,7 +43,6 @@
     p  { color: var(--ink-2); font-size: 1rem; line-height: 1.75; }
     a  { color: inherit; text-decoration: none; }
 
-    /* ─── Layout Utilities ────────────────────────────────── */
     .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
     .section { padding: 7rem 0; }
     .section + .section { border-top: 1px solid var(--border); }
@@ -63,7 +57,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* ─── Navigation ──────────────────────────────────────── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -118,7 +111,6 @@
     }
     .nav-cta:hover { opacity: 0.8; }
 
-    /* Hamburger */
     .nav-toggle {
       display: none;
       background: none;
@@ -137,7 +129,6 @@
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-    /* Mobile nav drawer */
     .nav-drawer {
       display: none;
       position: fixed;
@@ -152,7 +143,6 @@
     .nav-drawer.open { display: flex; }
     .nav-drawer a { font-size: 1.1rem; color: var(--ink-2); font-weight: 400; }
 
-    /* ─── Hero ────────────────────────────────────────────── */
     #hero {
       padding-top: calc(var(--nav-h) + 6rem);
       padding-bottom: 7rem;
@@ -187,11 +177,7 @@
     }
 
     .hero-headline { margin-bottom: 1.5rem; }
-
-    .hero-headline em {
-      font-style: italic;
-      color: var(--ink-2);
-    }
+    .hero-headline em { font-style: italic; color: var(--ink-2); }
 
     .hero-sub {
       font-size: 1.05rem;
@@ -258,114 +244,8 @@
       margin-bottom: 0.25rem;
     }
     .hero-stat-label { font-size: 0.82rem; color: var(--ink-3); }
-
     .hero-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; }
 
-    /* ─── Projects / Proof Gallery ────────────────────────── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 3.5rem;
-    }
-
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: box-shadow 0.25s, transform 0.25s;
-      background: var(--white);
-    }
-    .project-card:hover {
-      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
-      transform: translateY(-2px);
-    }
-    .project-card.featured { grid-column: span 2; }
-
-    .project-thumb {
-      width: 100%;
-      aspect-ratio: 16/8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-thumb-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
-      color: var(--ink-3);
-    }
-    .project-thumb-placeholder svg { width: 36px; height: 36px; opacity: 0.4; }
-    .project-thumb-placeholder span { font-size: 0.75rem; letter-spacing: 0.05em; }
-
-    .project-thumb img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: top;
-    }
-
-    .project-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
-
-    .project-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.6rem;
-    }
-
-    .project-tag {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-3);
-    }
-
-    .project-links { display: flex; gap: 0.5rem; }
-
-    .project-link {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--ink-2);
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      padding: 0.2rem 0.6rem;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .project-link:hover { border-color: var(--ink-2); color: var(--ink); }
-
-    .project-title {
-      font-family: var(--serif);
-      font-size: 1.25rem;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-    }
-
-    .project-desc { font-size: 0.875rem; color: var(--ink-2); margin-bottom: 1.25rem; flex: 1; }
-
-    .project-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .stack-chip {
-      font-size: 0.72rem;
-      font-weight: 500;
-      color: var(--ink-2);
-      padding: 0.25rem 0.65rem;
-      border-radius: 100px;
-      border: 1px solid var(--border);
-    }
-
-    /* ─── Skills / Resume ─────────────────────────────────── */
     .resume-layout {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
@@ -385,11 +265,7 @@
       margin-bottom: 0.85rem;
     }
 
-    .skill-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
     .skill-pill {
       font-size: 0.82rem;
@@ -436,7 +312,6 @@
       color: var(--ink-3);
     }
 
-    /* ─── Contact ─────────────────────────────────────────── */
     #contact { background: var(--surface); }
 
     .contact-layout {
@@ -471,83 +346,6 @@
     }
     .social-icon svg { width: 16px; height: 16px; }
 
-    /* Contact Form */
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-
-    label {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--ink-2);
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea {
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      color: var(--ink);
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.7rem 1rem;
-      outline: none;
-      transition: border-color 0.2s;
-      width: 100%;
-      -webkit-appearance: none;
-    }
-    input::placeholder, textarea::placeholder { color: var(--ink-3); }
-    input:focus, textarea:focus { border-color: var(--ink); }
-    textarea { resize: vertical; min-height: 120px; }
-
-    .form-note {
-      font-size: 0.75rem;
-      color: var(--ink-3);
-    }
-
-    .btn-submit {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      background: var(--ink);
-      color: var(--white);
-      border: none;
-      border-radius: 8px;
-      padding: 0.8rem 1.75rem;
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: opacity 0.2s;
-      width: 100%;
-    }
-    .btn-submit:hover { opacity: 0.8; }
-    .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
-
-    .form-success {
-      display: none;
-      padding: 1rem 1.25rem;
-      background: #f0faf4;
-      border: 1px solid #b6e4c9;
-      border-radius: 8px;
-      font-size: 0.875rem;
-      color: #1d6b42;
-    }
-    .form-error {
-      display: none;
-      padding: 1rem 1.25rem;
-      background: #fff5f5;
-      border: 1px solid #fecaca;
-      border-radius: 8px;
-      font-size: 0.875rem;
-      color: #991b1b;
-    }
-
-    /* ─── Footer ──────────────────────────────────────────── */
     footer {
       padding: 2.5rem 0;
       border-top: 1px solid var(--border);
@@ -564,7 +362,6 @@
     .footer-name { font-family: var(--serif); font-size: 1rem; }
     .footer-copy { font-size: 0.8rem; color: var(--ink-3); }
 
-    /* ─── Scroll Reveal ───────────────────────────────────── */
     .reveal {
       opacity: 0;
       transform: translateY(20px);
@@ -572,7 +369,6 @@
     }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* ─── Responsive ──────────────────────────────────────── */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
@@ -582,14 +378,10 @@
       .hero-sub { max-width: 100%; }
       #hero { min-height: auto; padding-top: calc(var(--nav-h) + 4rem); padding-bottom: 5rem; }
 
-      .projects-grid { grid-template-columns: 1fr; }
-      .project-card.featured { grid-column: span 1; }
-
       .resume-layout { grid-template-columns: 1fr; gap: 3rem; }
       .exp-item { grid-template-columns: 80px 1fr; gap: 1rem; }
 
       .contact-layout { grid-template-columns: 1fr; gap: 3rem; }
-      .form-row { grid-template-columns: 1fr; }
 
       .footer-inner { flex-direction: column; align-items: flex-start; }
 
@@ -599,7 +391,6 @@
 </head>
 <body>
 
-  <!-- ───────────── Navigation ───────────── -->
   <nav aria-label="Main navigation">
     <div class="nav-inner">
       <a class="nav-logo" href="#hero">RKG.</a>
@@ -613,7 +404,6 @@
     </div>
   </nav>
 
-  <!-- Mobile Drawer -->
   <div class="nav-drawer" id="navDrawer" aria-hidden="true">
     <a href="#resume" onclick="closeNav()">Resume</a>
     <a href="#contact" onclick="closeNav()">Let's Talk →</a>
@@ -621,7 +411,6 @@
 
   <main>
 
-    <!-- ───────────── Hero ───────────────── -->
     <section id="hero">
       <div class="container">
         <div class="hero-inner">
@@ -631,10 +420,10 @@
               Full-Stack Developer<br><em>building the web</em><br>end-to-end.
             </h1>
             <p class="hero-sub">
-              I Create and manage production ready web applications from database  to polished UI  with a focus on performance, security, and systems that scale. With a background in Information Technology there is room for future scalability to outside software development.
+              I create and manage production ready web applications from database to polished UI with a focus on performance, security, and systems that scale. With a background in Information Technology there is room for future scalability to outside software development.
             </p>
             <div class="hero-actions">
-              <a href="#work" class="btn-primary">
+              <a href="#resume" class="btn-primary">
                 View My Work
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
@@ -666,7 +455,6 @@
       </div>
     </section>
 
-    <!-- ───────────── Resume ──────────────── -->
     <section class="section" id="resume">
       <div class="container">
         <p class="label">Background</p>
@@ -674,7 +462,6 @@
 
         <div class="resume-layout">
 
-          <!-- Skills Column -->
           <div class="skills-column reveal">
 
             <div>
@@ -739,7 +526,6 @@
 
           </div>
 
-          <!-- Experience Column -->
           <div class="experience-list reveal">
 
             <div class="exp-item">
@@ -782,14 +568,12 @@
       </div>
     </section>
 
-    <!-- ───────────── Contact ─────────────── -->
     <section class="section" id="contact">
       <div class="container">
         <p class="label">Get In Touch</p>
         <h2>Let's work together.</h2>
 
         <div class="contact-layout">
-
           <div class="contact-info reveal">
             <p class="contact-blurb">
               I'm currently open to full-time roles and select freelance projects. If you have something interesting in mind, I'd love to hear about it.
@@ -801,27 +585,24 @@
             <div class="contact-social">
               <a href="https://github.com/reignheartkimga-an-22-droid" class="social-link" target="_blank" rel="noopener">
                 <div class="social-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
                 </div>
                 github.com/reignheartkimga-an-22-droid
               </a>
-              <a href="https://linkedin.com/" class="social-link" target="_blank" rel="noopener">
+              <a href="https://linkedin.com/in/kimgaan" class="social-link" target="_blank" rel="noopener">
                 <div class="social-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </div>
-                linkedin.com/in/yourname
+                linkedin.com/in/kimgaan
               </a>
             </div>
           </div>
-          </div>
-
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ───────────── Footer ──────────────── -->
   <footer>
     <div class="container">
       <div class="footer-inner">
@@ -832,10 +613,8 @@
   </footer>
 
   <script>
-    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Nav toggle
     const toggle = document.getElementById('navToggle');
     const drawer = document.getElementById('navDrawer');
     toggle.addEventListener('click', () => {
@@ -843,6 +622,7 @@
       drawer.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open);
       drawer.setAttribute('aria-hidden', !open);
+    });
     function closeNav() {
       toggle.classList.remove('open');
       drawer.classList.remove('open');
@@ -850,7 +630,6 @@
       drawer.setAttribute('aria-hidden', true);
     }
 
-    // Scroll reveal
     const revealEls = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
@@ -862,49 +641,7 @@
       });
     }, { threshold: 0.1 });
     revealEls.forEach(el => observer.observe(el));
-
-    // Contact form → Cloudflare Worker
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const successEl = document.getElementById('formSuccess');
-    const errorEl = document.getElementById('formError');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      successEl.style.display = 'none';
-      errorEl.style.display = 'none';
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending…';
-
-      const payload = {
-        name:    form.name.value.trim(),
-        email:   form.email.value.trim(),
-        subject: form.subject.value.trim(),
-        message: form.message.value.trim(),
-      };
-
-      try {
-        // Replace this URL with your deployed Cloudflare Worker endpoint
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-
-        if (res.ok) {
-          successEl.style.display = 'block';
-          form.reset();
-        } else {
-          throw new Error('Non-OK response');
-        }
-      } catch {
-        errorEl.style.display = 'block';
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Send Message <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-      }
   </script>
 
 </body>
 </html>
-
